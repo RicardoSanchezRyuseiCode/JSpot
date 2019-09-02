@@ -1,0 +1,458 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!-- ============================================================== -->
+<!-- Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-5 align-self-center">
+            <h4 class="page-title" data-i18n="Jspot.MyProfile.Title"></h4>
+            <div class="d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" data-i18n="Jspot.MyProfile.Breadcumb1"></a></li>
+                        <li class="breadcrumb-item active" aria-current="page" data-i18n="Jspot.MyProfile.Breadcumb2"></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-lg-3 col-xlg-3 col-md-3">
+        <div class="card">
+            <form id="FormProfile">
+                <div class="card-body">
+                    <center class="mt-4">
+                        <img src="~/Assets/Xtreme/images/users/1.jpg" class="rounded-circle" width="150" data-elysium-jspot-profile-picture>
+                        <br /><br />
+                        <h4 class="card-title mt-2" data-elysium-jspot-myprofile-info data-elysium-jspot-myprofile-name></h4>
+                        <div class="form-group" data-elysium-jspot-myprofile-edit>
+                            <input type="text"
+                                   class="form-control col-md-12 ryusei-text-uppercase"
+                                   placeholder=""
+                                   id="Name"
+                                   name="Name"
+                                   data-parsley-required-message=""
+                                   data-parsley-minlength="3"
+                                   data-parsley-minlength-message=""
+                                   data-parsley-maxlength="100"
+                                   data-parsley-maxlength-message=""
+                                   data-i18n="[placeholder]Jspot.MyProfile.Name;
+                                                [data-parsley-required-message]Ryusei.Register.RequiredName;
+                                                [data-parsley-minlength-message]Ryusei.Register.MinLenghtName;
+                                                [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtName;"
+                                   data-elysium-iform-uppercase />
+                        </div>
+                        <div class="form-group row" data-elysium-jspot-myprofile-edit style="margin-bottom: 0">
+                            <div class="col-md-12">
+                                <p style="margin-bottom: 0" data-elysium-jspot-myprofile-name-error></p>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group" data-elysium-jspot-myprofile-edit>
+                            <input type="text"
+                                   class="form-control col-md-12 ryusei-text-uppercase"
+                                   placeholder=""
+                                   id="Lastname"
+                                   name="Lastname"
+                                   required
+                                   data-parsley-required-message=""
+                                   data-parsley-minlength="5"
+                                   data-parsley-minlength-message=""
+                                   data-parsley-maxlength="150"
+                                   data-parsley-maxlength-message=""
+                                   data-i18n="[placeholder]Jspot.MyProfile.Lastname;
+                                                [data-parsley-required-message]Ryusei.Register.RequiredLastname;
+                                                [data-parsley-minlength-message]Ryusei.Register.MinLenghtLastname;
+                                                [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtLastname;"
+                                   data-elysium-iform-uppercase />
+                        </div>
+                        <div class="form-group row" data-elysium-jspot-myprofile-edit style="margin-bottom: 0">
+                            <div class="col-md-12">
+                                <p style="margin-bottom: 0" data-elysium-jspot-myprofile-lastname-error></p>
+                            </div>
+                        </div>
+
+
+                        <h6 class="card-subtitle" data-elysium-jspot-myprofile-info data-elysium-jspot-myprofile-job></h6>
+                        <div class="form-group" data-elysium-jspot-myprofile-edit>
+                            <input type="text"
+                                   class="form-control col-md-12 ryusei-text-uppercase"
+                                   placeholder=""
+                                   id="Job"
+                                   name="Job"
+                                   required
+                                   data-parsley-required-message=""
+                                   data-parsley-minlength="5"
+                                   data-parsley-minlength-message=""
+                                   data-parsley-maxlength="100"
+                                   data-parsley-maxlength-message=""
+                                   data-i18n="[placeholder]Jspot.MyProfile.Job;
+                                                [data-parsley-required-message]Ryusei.Register.RequiredJob;
+                                                [data-parsley-minlength-message]Ryusei.Register.MinLenghtJob;
+                                                [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtJob;"
+                                   data-elysium-iform-uppercase />
+                        </div>
+                        <div class="form-group row" data-elysium-jspot-myprofile-edit style="margin-bottom: 0">
+                            <div class="col-md-12">
+                                <p style="margin-bottom: 0" data-elysium-jspot-myprofile-job-error></p>
+                            </div>
+                        </div>
+
+                    </center>
+                </div>
+                <div>
+                    <hr>
+                </div>
+                <div class="card-body">
+                    <small class="text-muted" data-i18n="Jspot.MyProfile.Email"></small>
+                    <h6 data-elysium-jspot-myprofile-info data-elysium-jspot-myprofile-email></h6>
+                    <div class="form-group" data-elysium-jspot-myprofile-edit>
+                        <input type="text"
+                               class="form-control col-md-12 ryusei-text-uppercase"
+                               placeholder=""
+                               id="Email"
+                               name="Email"
+                               data-parsley-type-message=""
+                               data-parsley-trigger="change"
+                               required
+                               data-parsley-required-message=""
+                               data-parsley-minlength="10"
+                               data-parsley-minlength-message=""
+                               data-parsley-maxlength="100"
+                               data-parsley-maxlength-message=""
+                               data-i18n="[placeholder]Jspot.MyProfile.Email;
+                                            [data-parsley-type-message]Ryusei.Register.ValidEmail;
+                                            [data-parsley-required-message]Ryusei.Register.RequiredEmail;
+                                            [data-parsley-minlength-message]Ryusei.Register.MinLenghtEmail;
+                                            [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtEmail;"
+                               data-elysium-iform-uppercase />
+                    </div>
+                    <div class="form-group row" data-elysium-jspot-myprofile-edit style="margin-bottom: 0">
+                        <div class="col-md-12">
+                            <p style="margin-bottom: 0" data-elysium-jspot-myprofile-email-error></p>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <small class="text-muted" data-i18n="Jspot.MyProfile.Phone"></small>
+                    <h6 data-elysium-jspot-myprofile-info data-elysium-jspot-myprofile-phone></h6>
+                    <div class="form-group" data-elysium-jspot-myprofile-edit>
+                        <input type="text"
+                               class="form-control col-md-12 ryusei-text-uppercase"
+                               placeholder=""
+                               id="Phone"
+                               name="Phone"
+                               required
+                               data-parsley-required-message=""
+                               data-parsley-minlength="10"
+                               data-parsley-minlength-message=""
+                               data-parsley-maxlength="40"
+                               data-parsley-maxlength-message=""
+                               data-i18n="[placeholder]Jspot.MyProfile.Phone;
+                                            [data-parsley-required-message]Ryusei.Register.RequiredPhone;
+                                            [data-parsley-minlength-message]Ryusei.Register.MinLenghtPhone;
+                                            [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtPhone;"
+                               data-elysium-iform-uppercase />
+                    </div>
+                    <div class="form-group row" data-elysium-jspot-myprofile-edit style="margin-bottom: 0">
+                        <div class="col-md-12">
+                            <p style="margin-bottom: 0" data-elysium-jspot-myprofile-phone-error></p>
+                        </div>
+                    </div>
+                    <br />
+
+                    <small class="text-muted" data-i18n="Jspot.MyProfile.Company"></small>
+                    <h6 data-elysium-jspot-myprofile-info data-elysium-jspot-myprofile-company></h6>
+                    <div class="form-group" data-elysium-jspot-myprofile-edit>
+                        <input type="text"
+                               class="form-control col-md-12 ryusei-text-uppercase"
+                               placeholder=""
+                               id="Company"
+                               name="Company"
+                               required
+                               data-parsley-required-message=""
+                               data-parsley-minlength="5"
+                               data-parsley-minlength-message=""
+                               data-parsley-maxlength="150"
+                               data-parsley-maxlength-message=""
+                               data-i18n="[placeholder]Jspot.MyProfile.Company;
+                                            [data-parsley-required-message]Ryusei.Register.RequiredCompany;
+                                            [data-parsley-minlength-message]Ryusei.Register.MinLenghtCompany;
+                                            [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtCompany;"
+                               data-elysium-iform-uppercase />
+                    </div>
+                    <div class="form-group row" data-elysium-jspot-myprofile-edit style="margin-bottom: 0">
+                        <div class="col-md-12">
+                            <p style="margin-bottom: 0" data-elysium-jspot-myprofile-company-error></p>
+                        </div>
+                    </div>
+                    <br />
+
+                    <button type="button" data-elysium-myprofile-info-edit-btn data-elysium-jspot-myprofile-info class="btn btn-circle btn-primary"><i class="fas fa-edit"></i></button>
+                    <button type="submit" data-elysium-myprofile-info-save-btn data-elysium-jspot-myprofile-edit class="btn btn-circle btn-primary"><i class="fas fa-save"></i></button>
+                    <button type="button" data-elysium-myprofile-info-cancel-btn data-elysium-jspot-myprofile-edit class="btn btn-circle btn-secondary"><i class="fas fa-times"></i></button>
+                </div>
+            </form>
+            <div>
+                <hr>
+            </div>
+            <form id="FormPassword">
+                <div class="card-body">
+                    <small class="text-muted" data-i18n="Jspot.MyProfile.Password"></small>
+                    <h6 data-elysium-jspot-myprofile-password-info>************</h6>
+
+                    <div class="form-group row" data-elysium-jspot-myprofile-password-edit>
+                        <div class="col-md-12 ">
+                            <input id="Password"
+                                   name="Password"
+                                   type="password"
+                                   class="form-control col-md-12"
+                                   placeholder=""
+                                   aria-label=""
+                                   aria-describedby="basic-addon1"
+                                   data-parsley-trigger="change"
+                                   data-parsley-group="step-1"
+                                   required
+                                   data-parsley-required-message=""
+                                   data-parsley-minlength="10"
+                                   data-parsley-minlength-message=""
+                                   data-parsley-maxlength="250"
+                                   data-parsley-maxlength-message=""
+                                   data-parsley-password-strength
+                                   data-parsley-password-strength-message=""
+                                   data-i18n="[placeholder]Ryusei.Register.Password;
+                                                            [data-parsley-required-message]Ryusei.Register.RequiredPassword;
+                                                            [data-parsley-minlength-message]Ryusei.Register.MinLenghtPassword;
+                                                            [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtPassword;
+                                                            [data-parsley-password-strength-message]Ryusei.Register.StrengthPassword;" />
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-bottom: 0" data-elysium-jspot-myprofile-password-edit>
+                        <div class="col-md-12">
+                            <p style="margin-bottom: 0" data-elysium-jspot-myprofile-password-error></p>
+                        </div>
+                    </div>
+                    <!-- Confirm Password -->
+                    <div class="form-group row " data-elysium-jspot-myprofile-password-edit>
+                        <div class="col-md-12 ">
+                            <input id="ConfirmPassword"
+                                   name="ConfirmPassword"
+                                   type="password"
+                                   class="form-control col-md-12"
+                                   placeholder=""
+                                   aria-label=""
+                                   aria-describedby="basic-addon1"
+                                   data-parsley-trigger="change"
+                                   data-parsley-group="step-1"
+                                   required
+                                   data-parsley-required-message=""
+                                   data-parsley-minlength="10"
+                                   data-parsley-minlength-message=""
+                                   data-parsley-maxlength="250"
+                                   data-parsley-maxlength-message=""
+                                   data-parsley-equalto="#Password"
+                                   data-parsley-equalto-message=""
+                                   data-i18n="[placeholder]Ryusei.Register.ConfirmPassword;
+                                                            [data-parsley-required-message]Ryusei.Register.RequiredConfirmPassword;
+                                                            [data-parsley-minlength-message]Ryusei.Register.MinLenghtPassword;
+                                                            [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtPassword;
+                                                            [data-parsley-equalto-message]Ryusei.Register.EqualToConfirmPassword;" />
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-bottom: 0" data-elysium-jspot-myprofile-password-edit>
+                        <div class="col-md-12">
+                            <p style="margin-bottom: 0" data-elysium-jspot-myprofile-confirmpassword-error></p>
+                        </div>
+                    </div>
+
+                    <button type="button" data-elysium-myprofile-password-edit-btn data-elysium-jspot-myprofile-password-info class="btn btn-circle btn-primary"><i class="fas fa-edit"></i></button>
+                    <button type="submit" data-elysium-myprofile-password-save-btn data-elysium-jspot-myprofile-password-edit class="btn btn-circle btn-primary"><i class="fas fa-save"></i></button>
+                    <button type="button" data-elysium-myprofile-password-cancel-btn data-elysium-jspot-myprofile-password-edit class="btn btn-circle btn-secondary"><i class="fas fa-times"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-9 col-xlg-9 col-md-9">
+        <!-- Car management -->
+        <div class="row" data-elysium-car-management-panel>
+            <div class="col-lg-12 col-xlg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Mis autos</h3>
+                        <hr />
+                        <div class="row">
+                            <div class="col-lg-10 col-xlg-10 col-md-10">
+                                <label>Busqueda</label>
+                                <input type="text" class="form-control ryusei-text-uppercase" data-elysium-car-input-search />
+                            </div>
+                            <div class="col-lg-2 col-xlg-2 col-md-2">
+                                <button type="button" class="btn btn-primary btn-block m-t-30" data-elysium-car-new-button>
+                                    <span class="fas fa-plus"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="feed-widget scrollable" style="height:450px;" data-elysium-car-list></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Car form -->
+        <div class="row" data-elysium-car-form-panel>
+            <div class="col-lg-12 col-xlg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Agregar auto</h3>
+                        <form data-elysium-car-form>
+
+                            <div class="form-group">
+                                <label>Modelo</label>
+                                <input type="text" class="form-control ryusei-text-uppercase"
+                                       id="Model"
+                                       name="Model"
+                                       required
+                                       data-parsley-required-message="Debe ingresar el modelo de su auto"
+                                       data-parsley-minlength="2"
+                                       data-parsley-minlength-message="La longitud minima es de de 2 caracteres"
+                                       data-parsley-maxlength="50"
+                                       data-parsley-maxlength-message="La longitud maxima es de 50 caracteres"
+                                       data-elysium-iform-uppercase />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Marca</label>
+                                <input type="text" class="form-control ryusei-text-uppercase"
+                                       id="Brand"
+                                       name="Brand"
+                                       data-parsley-trigger="change"
+                                       data-parsley-group="step-1"
+                                       required
+                                       data-parsley-required-message="Debe ingresar la marca de su auto"
+                                       data-parsley-minlength="2"
+                                       data-parsley-minlength-message="La longitud minima es de de 2 caracteres"
+                                       data-parsley-maxlength="50"
+                                       data-parsley-maxlength-message="La longitud maxima es de 50 caracteres"
+                                       data-elysium-iform-uppercase />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Color</label>
+                                <input type="color" class="form-control ryusei-text-uppercase"
+                                       id="Color"
+                                       name="Color"
+                                       data-parsley-trigger="change"
+                                       data-parsley-group="step-1"
+                                       required
+                                       data-parsley-required-message="Debe seleccionar el color de su auto"
+                                       data-elysium-iform-uppercase />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Lugares disponibles(Incluyendo conductor)</label>
+                                <input type="number" step="1" class="form-control"
+                                       id="Spots"
+                                       name="Spots"
+                                       data-parsley-required
+                                       data-parsley-required-message="Debe ingresar la cantidad de lugares disponibles"
+                                       data-parsley-type="number"
+                                       data-parsley-type-message="El dato debe ser númerico"
+                                       data-parsley-gt="0"
+                                       data-parsley-gt-message="La cantidad de lugares disponibles debe ser mayor a 0" />
+                            </div>
+
+                            <input type="text" id="CarId" name="CarId" style="display:none"/>
+
+                            <div class="form-group">
+                                <div class="pull-right">
+                                    <button type="submit" class="btn btn-primary">
+                                        <span class="fas fa-save"></span> Guardar
+                                    </button>
+                                    <button type="button" class="btn btn-default" data-elysium-car-form-cancel>
+                                        <span class="fas fa-times"></span> Cancelar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Cancel Account -->
+        <div class="row">
+            <div class="col-lg-12 col-xlg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <button type="button" class="btn waves-effect waves-light btn-danger" data-i18n="[html]Jspot.MyProfile.CloseAccount" data-elysium-jspot-myprofile-closeaccount></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<form data-elysium-jspot-profile-picture-form>
+    <input data-elysium-jspot-profile-picture-input type="file" accept="image/*" style="display:none;" />
+</form>
+<!-- ============================================================== -->
+<!--                            Script of page                      -->
+<!-- ============================================================== -->
+<script>
+    /**
+     * Entry point of app
+     */
+    $(document).ready(function () {
+        // Define controller
+        var controller = Elysium.Implements(new Elysium.App.Controllers.Areas.Auth.MyProfileController({
+            UI: {
+                MainPanel: "#content",
+                Username: "[data-elysium-jspot-myprofile-name]",
+                Useremail: "[data-elysium-jspot-myprofile-email]",
+                Userphone: "[data-elysium-jspot-myprofile-phone]",
+                Usercompany: "[data-elysium-jspot-myprofile-company]",
+                Userjob: "[data-elysium-jspot-myprofile-job]",
+                InfoFields: "[data-elysium-jspot-myprofile-info]",
+                EditFields: "[data-elysium-jspot-myprofile-edit]",
+                Usereditbtn: "[data-elysium-myprofile-info-edit-btn]",
+                Usersavebtn: "[data-elysium-myprofile-info-save-btn]",
+                Usercancelbtn: "[data-elysium-myprofile-info-cancel-btn]",
+                Userform: "#FormProfile",
+                Passwordeditbtn: "[data-elysium-myprofile-password-edit-btn]",
+                Passwordsavebtn: "[data-elysium-myprofile-password-save-btn]",
+                Passwordcancelbtn: "[data-elysium-myprofile-password-cancel-btn]",
+                InfoPasswordField: "[data-elysium-jspot-myprofile-password-info]",
+                EditPasswordField: "[data-elysium-jspot-myprofile-password-edit]",
+                PasswordForm: "#FormPassword",
+                CloseAccountBtn: "[data-elysium-jspot-myprofile-closeaccount]",
+                ProfilePicture: "[data-elysium-jspot-profile-picture]",
+                ProfilePictureInput: "[data-elysium-jspot-profile-picture-input]",
+                ProfilePictureForm: "[data-elysium-jspot-profile-picture-form]",
+
+                CarPanel: "[data-elysium-car-management-panel]",
+                CarInputSearch: "[data-elysium-car-input-search]",
+                CarList: "[data-elysium-car-list]",
+                CarPanelForm: "[data-elysium-car-form-panel]",
+                CarForm: "[data-elysium-car-form]",
+                CarNewButton: "[data-elysium-car-new-button]",
+                CarCancelButton: "[data-elysium-car-form-cancel]"
+            }
+        }), [Elysium.App.Interfaces.IController]);
+        // Add controller to i18n page
+        Elysium.GlobalObj["i18nGlobal"].UpdateControllers([controller]);
+        // Initialize controller
+        controller.Initialize();
+    });
+</script>

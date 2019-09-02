@@ -1,0 +1,371 @@
+﻿@using System.Configuration
+@{
+    Layout = null;
+}
+<html dir="ltr">
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Responsive and information -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="JSpot - RyuseiCode">
+        <meta name="author" content="Ricardo Sanchez Romero - RyuseiCode">
+        <!-- Title -->
+        <title>JSPOT</title>
+        <!-- Styles -->
+        @Styles.Render("~/Assets/Xtreme/Style")
+        @Styles.Render("~/Assets/Ryusei/Style")
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Main Wrapper* -->
+        <div class="main-wrapper">
+            <!-- ============================================================== -->
+            <!--                            Preloader                           -->
+            <!-- ============================================================== -->
+            <div class="preloader">
+                <div class="lds-ripple">
+                    <div class="lds-pos"></div>
+                    <div class="lds-pos"></div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!--                         Register Box                           -->
+            <!-- ============================================================== -->
+            <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(/Assets/Xtreme/images/big/auth-bg.jpg) no-repeat center center;">
+                <div class="auth-box">
+                    <div id="RegisterPanel">
+                        <div class="logo">
+                            <span class="db"><img src="~/Assets/JSpot/images/logo_small.png" alt="logo" /></span>
+                        </div>
+                        <!-- Form -->
+                        <div class="row">
+                            <div class="col-12">
+                                <form class="form-horizontal mt-3" id="Registerform">
+                                    <!-- Name -->
+                                    <div class="form-group row ">
+                                        <div class="col-12 ">
+                                            <input class="form-control form-control-lg ryusei-text-uppercase"
+                                                   type="text"
+                                                   id="Name"
+                                                   name="Name"
+                                                   placeholder=""
+                                                   required
+                                                   data-parsley-required-message=""
+                                                   data-parsley-minlength="3"
+                                                   data-parsley-minlength-message=""
+                                                   data-parsley-maxlength="100"
+                                                   data-parsley-maxlength-message=""
+                                                   data-i18n="[placeholder]Ryusei.Register.Name;
+                                                              [data-parsley-required-message]Ryusei.Register.RequiredName;
+                                                              [data-parsley-minlength-message]Ryusei.Register.MinLenghtName;
+                                                              [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtName;"
+                                                   data-elysium-iform-uppercase />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" style="margin-bottom: 0">
+                                        <div class="col-md-12">
+                                            <p style="margin-bottom: 0" data-elysium-register-name-error></p>
+                                        </div>
+                                    </div>
+                                    <!-- Lastname -->
+                                    <div class="form-group row ">
+                                        <div class="col-12 ">
+                                            <input class="form-control form-control-lg ryusei-text-uppercase"
+                                                   type="text"
+                                                   id="Lastname"
+                                                   name="Lastname"
+                                                   placeholder=""
+                                                   required
+                                                   data-parsley-required-message=""
+                                                   data-parsley-minlength="5"
+                                                   data-parsley-minlength-message=""
+                                                   data-parsley-maxlength="150"
+                                                   data-parsley-maxlength-message=""
+                                                   data-i18n="[placeholder]Ryusei.Register.Lastname;
+                                                              [data-parsley-required-message]Ryusei.Register.RequiredLastname;
+                                                              [data-parsley-minlength-message]Ryusei.Register.MinLenghtLastname;
+                                                              [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtLastname;"
+                                                   data-elysium-iform-uppercase />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" style="margin-bottom: 0">
+                                        <div class="col-md-12">
+                                            <p style="margin-bottom: 0" data-elysium-register-lastname-error></p>
+                                        </div>
+                                    </div>
+                                    <!-- Email -->
+                                    <div class="form-group row ">
+                                        <div class="col-12 ">
+                                            <input class="form-control form-control-lg ryusei-text-uppercase"
+                                                   id="Email"
+                                                   name="Email"
+                                                   type="text"
+                                                   placeholder=""
+                                                   aria-label="Correo electronico"
+                                                   aria-describedby="basic-addon1"
+                                                   data-parsley-type-message=""
+                                                   data-parsley-trigger="change"
+                                                   required
+                                                   data-parsley-required-message=""
+                                                   data-parsley-minlength="10"
+                                                   data-parsley-minlength-message=""
+                                                   data-parsley-maxlength="100"
+                                                   data-parsley-maxlength-message=""
+                                                   data-i18n="[placeholder]Ryusei.Register.Email;
+                                                              [aria-label]Ryusei.Register.Email;
+                                                              [data-parsley-type-message]Ryusei.Register.ValidEmail;
+                                                              [data-parsley-required-message]Ryusei.Register.RequiredEmail;
+                                                              [data-parsley-minlength-message]Ryusei.Register.MinLenghtEmail;
+                                                              [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtEmail;"
+                                                   data-elysium-iform-uppercase />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" style="margin-bottom: 0">
+                                        <div class="col-md-12">
+                                            <p style="margin-bottom: 0" data-elysium-register-email-error></p>
+                                        </div>
+                                    </div>
+                                    <!-- Phone -->
+                                    <div class="form-group row ">
+                                        <div class="col-12 ">
+                                            <input class="form-control form-control-lg ryusei-text-uppercase"
+                                                   type="text"
+                                                   id="Phone"
+                                                   name="Phone"
+                                                   placeholder=""
+                                                   required
+                                                   data-parsley-required-message=""
+                                                   data-parsley-minlength="10"
+                                                   data-parsley-minlength-message=""
+                                                   data-parsley-maxlength="40"
+                                                   data-parsley-maxlength-message=""
+                                                   data-i18n="[placeholder]Ryusei.Register.Phone;
+                                                              [data-parsley-required-message]Ryusei.Register.RequiredPhone;
+                                                              [data-parsley-minlength-message]Ryusei.Register.MinLenghtPhone;
+                                                              [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtPhone;"
+                                                   data-elysium-iform-uppercase />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" style="margin-bottom: 0">
+                                        <div class="col-md-12">
+                                            <p style="margin-bottom: 0" data-elysium-register-phone-error></p>
+                                        </div>
+                                    </div>
+                                    <!-- Company -->
+                                    <div class="form-group row ">
+                                        <div class="col-12 ">
+                                            <input class="form-control form-control-lg ryusei-text-uppercase"
+                                                   type="text"
+                                                   id="Company"
+                                                   name="Company"
+                                                   placeholder=""
+                                                   required
+                                                   data-parsley-required-message=""
+                                                   data-parsley-minlength="5"
+                                                   data-parsley-minlength-message=""
+                                                   data-parsley-maxlength="150"
+                                                   data-parsley-maxlength-message=""
+                                                   data-i18n="[placeholder]Ryusei.Register.Company;
+                                                              [data-parsley-required-message]Ryusei.Register.RequiredCompany;
+                                                              [data-parsley-minlength-message]Ryusei.Register.MinLenghtCompany;
+                                                              [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtCompany;"
+                                                   data-elysium-iform-uppercase />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" style="margin-bottom: 0">
+                                        <div class="col-md-12">
+                                            <p style="margin-bottom: 0" data-elysium-register-company-error></p>
+                                        </div>
+                                    </div>
+                                    <!-- Job -->
+                                    <div class="form-group row ">
+                                        <div class="col-12 ">
+                                            <input class="form-control form-control-lg ryusei-text-uppercase"
+                                                   type="text"
+                                                   id="Job"
+                                                   name="Job"
+                                                   placeholder=""
+                                                   required
+                                                   data-parsley-required-message=""
+                                                   data-parsley-minlength="5"
+                                                   data-parsley-minlength-message=""
+                                                   data-parsley-maxlength="100"
+                                                   data-parsley-maxlength-message=""
+                                                   data-i18n="[placeholder]Ryusei.Register.Job;
+                                                              [data-parsley-required-message]Ryusei.Register.RequiredJob;
+                                                              [data-parsley-minlength-message]Ryusei.Register.MinLenghtJob;
+                                                              [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtJob;"
+                                                   data-elysium-iform-uppercase />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" style="margin-bottom: 0">
+                                        <div class="col-md-12">
+                                            <p style="margin-bottom: 0" data-elysium-register-job-error></p>
+                                        </div>
+                                    </div>
+                                    <!-- Password -->
+                                    <div class="form-group row ">
+                                        <div class="col-12 ">
+                                            <input id="Password"
+                                                   name="Password"
+                                                   type="password"
+                                                   class="form-control form-control-lg"
+                                                   placeholder=""
+                                                   aria-label=""
+                                                   aria-describedby="basic-addon1"
+                                                   data-parsley-trigger="change"
+                                                   data-parsley-group="step-1"
+                                                   required
+                                                   data-parsley-required-message=""
+                                                   data-parsley-minlength="10"
+                                                   data-parsley-minlength-message=""
+                                                   data-parsley-maxlength="250"
+                                                   data-parsley-maxlength-message=""
+                                                   data-parsley-password-strength
+                                                   data-parsley-password-strength-message=""
+                                                   data-i18n="[placeholder]Ryusei.Register.Password;
+                                                              [data-parsley-required-message]Ryusei.Register.RequiredPassword;
+                                                              [data-parsley-minlength-message]Ryusei.Register.MinLenghtPassword;
+                                                              [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtPassword;
+                                                              [data-parsley-password-strength-message]Ryusei.Register.StrengthPassword;" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" style="margin-bottom: 0">
+                                        <div class="col-md-12">
+                                            <p style="margin-bottom: 0" data-elysium-register-password-error></p>
+                                        </div>
+                                    </div>
+                                    <!-- Confirm Password -->
+                                    <div class="form-group row ">
+                                        <div class="col-12 ">
+                                            <input id="ConfirmPassword"
+                                                   name="ConfirmPassword"
+                                                   type="password"
+                                                   class="form-control form-control-lg"
+                                                   placeholder=""
+                                                   aria-label=""
+                                                   aria-describedby="basic-addon1"
+                                                   data-parsley-trigger="change"
+                                                   data-parsley-group="step-1"
+                                                   required
+                                                   data-parsley-required-message=""
+                                                   data-parsley-minlength="10"
+                                                   data-parsley-minlength-message=""
+                                                   data-parsley-maxlength="250"
+                                                   data-parsley-maxlength-message=""
+                                                   data-parsley-equalto="#Password"
+                                                   data-parsley-equalto-message=""
+                                                   data-i18n="[placeholder]Ryusei.Register.ConfirmPassword;
+                                                              [data-parsley-required-message]Ryusei.Register.RequiredConfirmPassword;
+                                                              [data-parsley-minlength-message]Ryusei.Register.MinLenghtPassword;
+                                                              [data-parsley-maxlength-message]Ryusei.Register.MaxLenghtPassword;
+                                                              [data-parsley-equalto-message]Ryusei.Register.EqualToConfirmPassword;" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" style="margin-bottom: 0">
+                                        <div class="col-md-12">
+                                            <p style="margin-bottom: 0" data-elysium-register-confirmpassword-error></p>
+                                        </div>
+                                    </div>
+                                    <!-- Register button -->
+                                    <div class="form-group text-center">
+                                        <div class="col-xs-12 pb-3">
+                                            <button class="btn btn-block btn-lg btn-info" type="submit" data-i18n="Ryusei.Register.Save"></button>
+                                        </div>
+                                    </div>
+                                    <!-- Register Error -->
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <p style="color:#e5603b; font-size: 12px !important" id="RegisterError"></p>
+                                        </div>
+                                    </div>
+                                    <!-- Sign in legent -->
+                                    <div class="form-group mb-0 mt-2">
+                                        <div class="col-sm-12 text-center" data-i18n="[html]Ryusei.Register.Login"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="SuccessPanel">
+                        <div class="logo">
+                            <span class="db"><img src="~/Assets/JSpot/images/logo_small.png" alt="logo" /></span>
+                        </div>
+                        <div class="row mt-3">
+                            
+                            <div class="card mt-0 mb-0" style="background: linear-gradient(to right,#BB1542 0,#0E215B 100%);">
+                                <div class="card-body">
+                                    <h4 class="card-title text-white" data-i18n="[html]Ryusei.Register.Success"></h4>
+                                    <div class="row mt-4 mb-3">
+                                        <!-- col -->
+                                        <div class="col-sm-12 col-lg-12">
+                                            <div class="temp d-flex align-items-center flex-row">
+                                                <div class="display-5 text-white"><i class="fas fa-check-circle"></i></div>
+                                                <div class="ml-2">
+                                                    <h3 class="mb-0 text-white" data-i18n="[html]Ryusei.Register.Info"></h3>
+                                                    <a href="/Auth/Login" class="text-white op-5" data-i18n="[html]Ryusei.Register.LoginReturn"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <!-- *Main Container -->
+        <!-- Base Botton Scripts -->
+        @Scripts.Render("~/Assets/Xtreme/Script/BaseBottom")
+        <!-- Base URL -->
+        <script>
+            var AppHost = '@ConfigurationManager.AppSettings["AppHost"]';
+            var ApiGateway = '@ConfigurationManager.AppSettings["ApiGateway"]';
+        </script>
+        <!-- Elysium Script -->
+        @Scripts.Render("~/Assets/Elysium/Scripts")
+        <!-- I18N -->
+        @Scripts.Render("~/Assets/i18n/Scripts")
+        <!-- Entry point of application -->
+        <script>
+            $(document).ready(function () {
+                // Define controller
+                var controller = Elysium.Implements(new Elysium.App.Controllers.Areas.Auth.RegisterController({
+                    UI: {
+                        Form: "#Registerform",
+                        RegisterPanel: "#RegisterPanel",
+                        SuccessPanel: "#SuccessPanel",
+                        RegisterError: "#RegisterError"
+                    }
+                }), [Elysium.App.Interfaces.IController]);
+
+                // Initialize Broadcast Channel Global
+                Elysium.GlobalObj["BrdcstChGlobal"] = new Elysium.App.Globals.BrdcstChGlobals({});
+                Elysium.GlobalObj["BrdcstChGlobal"].Initialize();
+                // Initialize Language Global
+                Elysium.GlobalObj["i18nGlobal"] = new Elysium.App.Globals.I18nGlobals({ Event: "click" });
+                Elysium.GlobalObj["i18nGlobal"].UpdateControllers([controller]);
+                Elysium.GlobalObj["i18nGlobal"].Initialize();
+                // Initialize Validators global
+                Elysium.GlobalObj["ValidatorGlobal"] = new Elysium.App.Globals.ValidatorGlobals({});
+                Elysium.GlobalObj["ValidatorGlobal"].Initialize();
+                // Initialize the controller
+                controller.Initialize();
+            });
+        </script>
+    </body>
+</html>
+

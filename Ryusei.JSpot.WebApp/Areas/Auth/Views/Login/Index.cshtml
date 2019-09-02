@@ -1,0 +1,197 @@
+﻿@using System.Configuration
+@{
+    Layout = null;
+}
+<html dir="ltr">
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Responsive and information -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="JSpot - RyuseiCode">
+        <meta name="author" content="Ricardo Sanchez Romero - RyuseiCode">
+        <!-- Title -->
+        <title>JSPOT</title>
+        <!-- Styles -->
+        @Styles.Render("~/Assets/Xtreme/Style")
+        @Styles.Render("~/Assets/Ryusei/Style")
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+    </head>
+    <body>
+        <!-- Main Container* -->
+        <div class="main-wrapper">
+            <!-- ============================================================== -->
+            <!--                            Preloader                           -->
+            <!-- ============================================================== -->
+            <div class="preloader">
+                <div class="lds-ripple">
+                    <div class="lds-pos"></div>
+                    <div class="lds-pos"></div>
+                </div>
+            </div> 
+            <!-- ============================================================== -->
+            <!--                            Login Box                           -->
+            <!-- ============================================================== -->
+            <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(/Assets/Xtreme/images/big/auth-bg.jpg) no-repeat center center;">
+                <div class="auth-box">
+                    <div>
+                        <div class="logo">
+                            <span class="db"><img src="~/Assets/JSpot/images/logo_small.png" alt="logo" /></span>
+                        </div>
+                        <!-- Form -->
+                        <div class="row">
+                            <div class="col-12">
+                                <form class="form-horizontal mt-3" id="loginform">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
+                                        </div>
+                                        <input id="Email"
+                                               name="Email"
+                                               type="text"
+                                               class="form-control form-control-lg ryusei-text-uppercase"
+                                               placeholder=""
+                                               aria-label="Correo electronico"
+                                               aria-describedby="basic-addon1"
+                                               data-parsley-type-message=""
+                                               data-parsley-trigger="change"
+                                               required
+                                               data-parsley-required-message=""
+                                               data-parsley-minlength="10"
+                                               data-parsley-minlength-message=""
+                                               data-parsley-maxlength="100"
+                                               data-parsley-maxlength-message=""
+                                               data-i18n="[placeholder]Ryusei.Login.Email;
+                                                          [aria-label]Ryusei.Login.Email;
+                                                          [data-parsley-type-message]Ryusei.Login.ValidEmail;
+                                                          [data-parsley-required-message]Ryusei.Login.RequiredEmail;
+                                                          [data-parsley-minlength-message]Ryusei.Login.MinLenghtEmail;
+                                                          [data-parsley-maxlength-message]Ryusei.Login.MaxLenghtEmail;"
+                                               data-elysium-iform-uppercase />
+                                    </div>
+                                    <div class="form-group row" style="margin-bottom: 0">
+                                        <div class="col-md-12">
+                                            <p style="margin-bottom: 0" data-elysium-login-email-error></p>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                        </div>
+                                        <input id="Password"
+                                               name="Password"
+                                               type="password"
+                                               class="form-control form-control-lg"
+                                               placeholder=""
+                                               aria-label=""
+                                               aria-describedby="basic-addon1"
+                                               data-parsley-trigger="change"
+                                               data-parsley-group="step-1"
+                                               required
+                                               data-parsley-required-message=""
+                                               data-parsley-minlength="10"
+                                               data-parsley-minlength-message=""
+                                               data-parsley-maxlength="250"
+                                               data-parsley-maxlength-message=""
+                                               data-i18n="[placeholder]Ryusei.Login.Password;
+                                                          [data-parsley-required-message]Ryusei.Login.RequiredPassword;
+                                                          [data-parsley-minlength-message]Ryusei.Login.MinLenghtPassword;
+                                                          [data-parsley-maxlength-message]Ryusei.Login.MaxLenghtPassword;" />
+                                    </div>
+                                    <div class="form-group row" style="margin-bottom: 0">
+                                        <div class="col-md-12">
+                                            <p style="margin-bottom: 0" data-elysium-login-password-error></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="RememberMe" name="RememberMe">
+                                                <label class="custom-control-label" for="RememberMe" data-i18n="Ryusei.Login.Reminder"></label>
+                                                <a href="/Auth/Recover" id="to-recover" class="text-dark float-right" data-i18n="[html]Ryusei.Login.RecoverPassword"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <div class="col-xs-12 pb-3">
+                                            <button class="btn btn-block btn-lg btn-info" type="submit" data-i18n="Ryusei.Login.SignIn"></button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <p style="color:#e5603b; font-size: 12px !important" id="LoginError"></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-0 mt-2">
+                                        <div class="col-sm-12 text-center" data-i18n="[html]Ryusei.Login.Register">
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- *Main Container -->
+        <!-- Base Botton Scripts -->
+        @Scripts.Render("~/Assets/Xtreme/Script/BaseBottom")
+        <!-- Base URL -->
+        <script>
+            var AppHost = '@ConfigurationManager.AppSettings["AppHost"]';
+            var ApiGateway = '@ConfigurationManager.AppSettings["ApiGateway"]';
+        </script>
+        <!-- Elysium Script -->
+        @Scripts.Render("~/Assets/Elysium/Scripts")
+        <!-- I18N -->
+        @Scripts.Render("~/Assets/i18n/Scripts")
+        <!-- Entry point of application -->
+        <script>
+            $(document).ready(function () {
+                // Define controller
+                var controller = Elysium.Implements(new Elysium.App.Controllers.Areas.Auth.LoginController({
+                    UI: {
+                        Form: {
+                            Selector: "#loginform"
+                        },
+                        Checkbox: {
+                            RememberMe: "#RememberMe"
+                        },
+                        Input: {
+                            Email: "#Email",
+                            Password: "#Password"
+                        },
+                        Button: {
+                            Submit: "#loginform button[type=submit]"
+                        },
+                        Label: {
+                            LoginError: "#LoginError"
+                        }
+                    }
+                }), [Elysium.App.Interfaces.IController]);
+
+                // Initialize Broadcast Channel Global
+                Elysium.GlobalObj["BrdcstChGlobal"] = new Elysium.App.Globals.BrdcstChGlobals({});
+                Elysium.GlobalObj["BrdcstChGlobal"].Initialize();
+                // Initialize Language Global
+                Elysium.GlobalObj["i18nGlobal"] = new Elysium.App.Globals.I18nGlobals({ Event: "click" });
+                Elysium.GlobalObj["i18nGlobal"].UpdateControllers([controller]);
+                Elysium.GlobalObj["i18nGlobal"].Initialize();
+                // Initialize Validators global
+                Elysium.GlobalObj["ValidatorGlobal"] = new Elysium.App.Globals.ValidatorGlobals({});
+                Elysium.GlobalObj["ValidatorGlobal"].Initialize();
+                // Initialize the controller
+                controller.Initialize();
+
+            });
+        </script>
+
+    </body>
+</html>

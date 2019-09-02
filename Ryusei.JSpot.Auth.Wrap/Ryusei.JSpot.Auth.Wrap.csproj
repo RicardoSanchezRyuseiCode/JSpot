@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D3130F1-2A9B-46DE-83E6-9E7BF77312C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ryusei.JSpot.Auth.Wrap</RootNamespace>
+    <AssemblyName>Ryusei.JSpot.Auth.Wrap</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CryptSharp, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CryptSharpOfficial.2.1.0.0\lib\CryptSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmailWrapper.cs" />
+    <Compile Include="MenuItemWrapper.cs" />
+    <Compile Include="RegisterWrapper.cs" />
+    <Compile Include="UserWrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ryusei.Crypto\Ryusei.Crypto.csproj">
+      <Project>{de366c43-6fe8-4bcf-a4c6-0dfab58aef24}</Project>
+      <Name>Ryusei.Crypto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ryusei.Exception\Ryusei.Exception.csproj">
+      <Project>{78663F74-05DC-41C4-A79A-144CE6D6C16C}</Project>
+      <Name>Ryusei.Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ryusei.JSpot.Aut.Fty\Ryusei.JSpot.Auth.Fty.csproj">
+      <Project>{64BE9D60-24BA-4320-B2EB-756DABC62109}</Project>
+      <Name>Ryusei.JSpot.Auth.Fty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ryusei.JSpot.Auth.Ent\Ryusei.JSpot.Auth.Ent.csproj">
+      <Project>{5561b0da-692a-479b-b9f1-e6bdce4bd973}</Project>
+      <Name>Ryusei.JSpot.Auth.Ent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ryusei.JSpot.Auth.View\Ryusei.JSpot.Auth.View.csproj">
+      <Project>{2D38BC15-1CD1-4E53-BF8C-90EEE58CA76E}</Project>
+      <Name>Ryusei.JSpot.Auth.View</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ryusei.Message\Ryusei.Message.csproj">
+      <Project>{63F7BECF-F001-43BA-B293-3F06092E83B3}</Project>
+      <Name>Ryusei.Message</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ryusei.Storage.Fty\Ryusei.Storage.Fty.csproj">
+      <Project>{5A74CA45-F11C-491D-962F-37FC9F4F274D}</Project>
+      <Name>Ryusei.Storage.Fty</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

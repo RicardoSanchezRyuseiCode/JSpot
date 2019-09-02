@@ -1,0 +1,19 @@
+﻿.ryusei-text-uppercase {
+    text-transform: uppercase;
+}
+
+
+.pull-left {
+    float: left !important;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+
+td.dt-center {
+    text-align: center;
+    vertical-align: middle;
+    word-break: break-all;
+}
