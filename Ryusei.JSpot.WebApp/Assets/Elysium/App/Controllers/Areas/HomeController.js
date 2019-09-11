@@ -179,7 +179,7 @@ Elysium.App.Controllers.Areas.HomeController = function (arguments) {
             date = date.local();
             $(Attr.UI.InvitationList).append(
                 '<div class="calendar-events mb-3" data-class="bg-info">' +
-                '<strong>' + invitation.Event.Name + '</strong> <br/>' + date.format("DD-MM-YYYY h:mm:ss a") +
+                '<strong>' + invitation.Event.Name + '</strong> <br/>' + date.format("DD-MM-YYYY h:mm a") +
                 '<br />' +
                 '<button type="button" class="btn btn-success btn-xs" data-elysium-jspot-home-invitation-accept="' + invitation.InvitationId + '"><i class="fas fa-check-circle"></i></button>' +
                 '<button type="submit" class="btn btn-danger  btn-xs" data-elysium-jspot-home-invitation-reject="' + invitation.InvitationId + '"><i class="fas fa-trash"></i></button>' +
@@ -415,8 +415,8 @@ Elysium.App.Controllers.Areas.HomeController = function (arguments) {
         var objectEvent = {};
         // Add event 
         objectEvent['Event'] = rawEvent.Event;
-        objectEvent['Event'].StartDate = moment(rawEvent.Event.StartDate, "DD-MM-YYYY h:mm:ss a").format("YYYY-MM-DDTHH:mm:ss")
-        objectEvent['Event'].EndDate = moment(rawEvent.Event.EndDate, "DD-MM-YYYY h:mm:ss a").format("YYYY-MM-DDTHH:mm:ss")
+        objectEvent['Event'].StartDate = moment(rawEvent.Event.StartDate, "DD-MM-YYYY h:mm a");
+        objectEvent['Event'].EndDate = moment(rawEvent.Event.EndDate, "DD-MM-YYYY h:mm a");
         // Add Address
         objectEvent['Address'] = rawEvent.Address;
         objectEvent['Address']['Latitude'] = AddressMapMarker.getLatLng().lat;
@@ -446,8 +446,8 @@ Elysium.App.Controllers.Areas.HomeController = function (arguments) {
                     Name: rawEvent.CollectionEventGroupCreatePrm.EventGroup.Name[index].toUpperCase(),
                     Description: rawEvent.CollectionEventGroupCreatePrm.EventGroup.Description[index].toUpperCase(),
                     Capacity: Number(rawEvent.CollectionEventGroupCreatePrm.EventGroup.Capacity[index]),
-                    StartDate: moment(rawEvent.CollectionEventGroupCreatePrm.EventGroup.StartDate[index], "DD-MM-YYYY h:mm:ss a").format("YYYY-MM-DDTHH:mm:ss"),
-                    EndDate: moment(rawEvent.CollectionEventGroupCreatePrm.EventGroup.EndDate[index], "DD-MM-YYYY h:mm:ss a").format("YYYY-MM-DDTHH:mm:ss")
+                    StartDate: moment(rawEvent.CollectionEventGroupCreatePrm.EventGroup.StartDate[index], "DD-MM-YYYY h:mm a"),
+                    EndDate: moment(rawEvent.CollectionEventGroupCreatePrm.EventGroup.EndDate[index], "DD-MM-YYYY h:mm a")
                 };
                 // Create collection department of event group
                 var CollectionDepartment = [];
@@ -470,8 +470,8 @@ Elysium.App.Controllers.Areas.HomeController = function (arguments) {
                 Name: rawEvent.CollectionEventGroupCreatePrm.EventGroup.Name.toUpperCase(),
                 Description: rawEvent.CollectionEventGroupCreatePrm.EventGroup.Description.toUpperCase(),
                 Capacity: Number(rawEvent.CollectionEventGroupCreatePrm.EventGroup.Capacity),
-                StartDate: moment(rawEvent.CollectionEventGroupCreatePrm.EventGroup.StartDate, "DD-MM-YYYY h:mm:ss a").format("YYYY-MM-DDTHH:mm:ss"),
-                EndDate: moment(rawEvent.CollectionEventGroupCreatePrm.EventGroup.EndDate, "DD-MM-YYYY h:mm:ss a").format("YYYY-MM-DDTHH:mm:ss")
+                StartDate: moment(rawEvent.CollectionEventGroupCreatePrm.EventGroup.StartDate, "DD-MM-YYYY h:mm a"),
+                EndDate: moment(rawEvent.CollectionEventGroupCreatePrm.EventGroup.EndDate, "DD-MM-YYYY h:mm a")
             };
             // Create collection department of event group
             var CollectionDepartment = [];
@@ -583,11 +583,11 @@ Elysium.App.Controllers.Areas.HomeController = function (arguments) {
      * @abstract Method to enable map
      */
     var EnableMap = function () {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(SetPosition);
-        } else {
+        //if (navigator.geolocation) {
+        //    navigator.geolocation.getCurrentPosition(SetPosition);
+        //} else {
             CreateMap(23.6345005, -102.5527878);
-        }
+        //}
     }
     /************************************/
     /*             City events          */
@@ -684,13 +684,13 @@ Elysium.App.Controllers.Areas.HomeController = function (arguments) {
         // Add the form template to container
         $(Attr.UI.EventGroupList).append(formTemplateHtml);
         // Get event min date and max dat
-        var selectedStartDate = moment($(Attr.UI.EventStartDate).val(), "DD-MM-YYYY h:mm:ss a");
-        var selectedEndDate = moment($(Attr.UI.EventEndDate).val(), "DD-MM-YYYY h:mm:ss a");
+        var selectedStartDate = moment($(Attr.UI.EventStartDate).val(), "DD-MM-YYYY h:mm a");
+        var selectedEndDate = moment($(Attr.UI.EventEndDate).val(), "DD-MM-YYYY h:mm a");
         // Create StartDate Picker
         var startPicker = Elysium.Implements(new Elysium.UI.Entities.DateTimePicker({
             selector: $(Attr.UI.EventGroupList + " div.eventgroupelement").last().find("#CollectionEventGroupCreatePrm_EventGroup_StartDate"),
             options: {
-                format: 'DD-MM-YYYY h:mm:ss a',
+                format: 'DD-MM-YYYY h:mm a',
                 lang: 'es',
                 minDate: selectedStartDate,
                 maxDate: selectedEndDate,
@@ -703,7 +703,7 @@ Elysium.App.Controllers.Areas.HomeController = function (arguments) {
         var endPicker = Elysium.Implements(new Elysium.UI.Entities.DateTimePicker({
             selector: $(Attr.UI.EventGroupList + " div.eventgroupelement").last().find("#CollectionEventGroupCreatePrm_EventGroup_EndDate"),
             options: {
-                format: 'DD-MM-YYYY h:mm:ss a',
+                format: 'DD-MM-YYYY h:mm a',
                 lang: 'es',
                 minDate: selectedStartDate,
                 maxDate: selectedEndDate,
@@ -805,7 +805,7 @@ Elysium.App.Controllers.Areas.HomeController = function (arguments) {
             IDatePickerStartDate = Elysium.Implements(new Elysium.UI.Entities.DateTimePicker({
                 selector: Attr.UI.EventStartDate,
                 options: {
-                    format: 'DD-MM-YYYY h:mm:ss a',
+                    format: 'DD-MM-YYYY h:mm a',
                     lang: 'es',
                     minDate: moment(),
                     time: true
@@ -816,7 +816,7 @@ Elysium.App.Controllers.Areas.HomeController = function (arguments) {
             IDatePickerEndDate = Elysium.Implements(new Elysium.UI.Entities.DateTimePicker({
                 selector: Attr.UI.EventEndDate,
                 options: {
-                    format: 'DD-MM-YYYY h:mm:ss a',
+                    format: 'DD-MM-YYYY h:mm a',
                     lang: 'es',
                     minDate: moment(),
                     time: true

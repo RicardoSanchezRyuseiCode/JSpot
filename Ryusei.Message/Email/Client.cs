@@ -136,7 +136,7 @@ namespace Ryusei.Message.Email
             mail.Subject = Subject;
             // Paso 5: Agregamos mensaje
             mail.IsBodyHtml = true;
-            mail.From = new MailAddress(this.Configuration.From);
+            mail.From = new MailAddress(this.Configuration.From, this.Configuration.FromName);
             return mail;
         }
         private MailMessage CreateMailMessage(Address Address, string Subject, Dictionary<string, Stream> dicAttachments = null)
@@ -173,7 +173,7 @@ namespace Ryusei.Message.Email
             mail.Subject = Subject;
             // Paso 5: Agregamos mensaje
             mail.IsBodyHtml = true;
-            mail.From = new MailAddress(this.Configuration.From);
+            mail.From = new MailAddress(this.Configuration.From, this.Configuration.FromName);
             return mail;
         }
         /// <summary>

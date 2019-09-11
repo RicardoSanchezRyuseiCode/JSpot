@@ -167,7 +167,7 @@ namespace Ryusei.JSpot.Auth.Wrap
                 // Save relation user rol
                 this.IUserRoleMgr.Save(new List<UserRole>() { new UserRole() { RoleId = role.RoleId, UserId = user.UserId } });
                 // Send email of confirmation
-                this.EmailWrapper.SendMailNewUser(user, CreateValidationLink(user.Email));
+                //this.EmailWrapper.SendMailNewUser(user, CreateValidationLink(user.Email));
                 // Complete the scope
                 scope.Complete();
             }

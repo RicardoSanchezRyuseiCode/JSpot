@@ -137,15 +137,15 @@ namespace Ryusei.JSpot.Core.Wrap
                 // if all is valid save the paticipant
                 this.IParticipantMgr.Save(participant);
                 // Send email of sign in 
-                this.EmailWrapper.SendMailSignIn(eventGroup, @event, email, name, lastname);
+                //this.EmailWrapper.SendMailSignIn(eventGroup, @event, email, name, lastname);
                 // Send email to owners
-                this.EmailWrapper.SendMailSignInOwners(eventGroup, @event, email, name, lastname, collectionAssistants);
+                //this.EmailWrapper.SendMailSignInOwners(eventGroup, @event, email, name, lastname, collectionAssistants);
                 // Get participants again to check the capacity
                 // Get list of participants
                 participants = this.IParticipantMgr.GetByEventGroupId(participant.EventGroupId);
                 // Check if have capacity
-                if (eventGroup.Capacity - participants.Count() <= 0)
-                    this.EmailWrapper.SendMailGroupFull(eventGroup, @event, collectionAssistants);
+                //if (eventGroup.Capacity - participants.Count() <= 0)
+                //    this.EmailWrapper.SendMailGroupFull(eventGroup, @event, collectionAssistants);
                 // Complete the scope
                 scope.Complete();
             }

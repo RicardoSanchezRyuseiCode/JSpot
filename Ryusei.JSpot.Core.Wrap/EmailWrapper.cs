@@ -134,6 +134,7 @@ namespace Ryusei.JSpot.Core.Wrap
                 User = ConfigurationManager.AppSettings["SMTP:USER"],
                 Password = ConfigurationManager.AppSettings["SMTP:PASSWORD"],
                 From = ConfigurationManager.AppSettings["SMTP:FROM"],
+                FromName = ConfigurationManager.AppSettings["SMTP:FROMNAME"],
                 SSLConnection = bool.Parse(ConfigurationManager.AppSettings["SMTP:SSL"])
             };
 
@@ -212,7 +213,7 @@ namespace Ryusei.JSpot.Core.Wrap
             addressBook.To.Add(user.Email);
             // Place holders
             Dictionary<string, string> placeDicc = new Dictionary<string, string>();
-            placeDicc.Add("@@message", string.Format(EMAIL_ADDED_AS_OWNER, @event.Name, string.Format("{0} {1} ({2})", user.Name, user.Lastname, @event.Name)));
+            placeDicc.Add("@@message", string.Format(EMAIL_ADDED_AS_OWNER, @event.Name, string.Format("{0} {1} ({2})", user.Name, user.Lastname, user.Email), @event.Name));
             // Send the email
             Client emailClient = Client.GetInstance(this.EmailConfig);
             emailClient.SendMailList(addressBook, ".:: JSpot - Evento ::.", this.EmailTemplate, ImgInMail: this.ImageDictionary, PlaceHolders: placeDicc);
@@ -242,17 +243,23 @@ namespace Ryusei.JSpot.Core.Wrap
         /// <param name="event">Event</param>
         public void SendMailInvitations(IEnumerable<Invitation> collectionInvitations, Event @event)
         {
+            // Define email client
+            Client emailClient = Client.GetInstance(this.EmailConfig);
+            // Create message
+            Dictionary<string, string> placeDicc = new Dictionary<string, string>();
+            placeDicc.Add("@@message", string.Format(EMAIL_INVITATION, @event.Name, ConfigurationManager.AppSettings["JSPOT::FRONTEND:URL"]));
+            // Define address book
+            Message.Email.Address addressBook = new Message.Email.Address();
+            // Loop 
             foreach (Invitation invitation in collectionInvitations)
             {
-                Message.Email.Address addressBook = new Message.Email.Address();
+                
+                // Define address
                 addressBook.To.Add(invitation.Email);
-                // Place holders
-                Dictionary<string, string> placeDicc = new Dictionary<string, string>();
-                placeDicc.Add("@@message", string.Format(EMAIL_INVITATION, @event.Name, ConfigurationManager.AppSettings["JSPOT::FRONTEND:URL"]));
-                // Send the email
-                Client emailClient = Client.GetInstance(this.EmailConfig);
-                emailClient.SendMailList(addressBook, ".:: JSpot - Invitación ::.", this.EmailTemplate, ImgInMail: this.ImageDictionary, PlaceHolders: placeDicc);
+                
             }
+            // Send the email
+            emailClient.SendMailList(addressBook, string.Format(".:: {0} - JSpot - Invitación ::.", @event.Name), this.EmailTemplate, ImgInMail: this.ImageDictionary, PlaceHolders: placeDicc);
             /*// Create address book
             Message.Email.Address addressBook = new Message.Email.Address();
             // Loop in invitations

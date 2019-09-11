@@ -81,7 +81,7 @@ namespace Ryusei.JSpot.Core.Mgr
         public IEnumerable<Invitation> GetByEmail(string email)
         {
             // Define filter
-            string filter = "I.ResponseDate is null and EVT.Active = @Active and I.Email = @Email and EVT.StartDate > @CurrentDate";
+            string filter = "I.ResponseDate is null and EVT.Active = @Active and LOWER(I.Email) = LOWER(@Email) and EVT.StartDate > @CurrentDate";
             // Define order
             string order = "I.SendDate desc";
             // Define params

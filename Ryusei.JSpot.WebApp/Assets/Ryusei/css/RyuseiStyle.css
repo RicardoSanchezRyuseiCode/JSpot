@@ -17,3 +17,7 @@ td.dt-center {
     vertical-align: middle;
     word-break: break-all;
 }
+
+.svg-clock {
+    max-height: 280px;
+}

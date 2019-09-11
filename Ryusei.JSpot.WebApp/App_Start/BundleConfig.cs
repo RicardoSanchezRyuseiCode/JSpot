@@ -42,14 +42,31 @@ namespace Ryusei.JSpot.WebApp
                       "~/Assets/Xtreme/libs/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css",
                       "~/Assets/Xtreme/libs/select2/dist/css/select2.min.css",
                       "~/Assets/Xtreme/libs/datatables.net-bs4/css/dataTables.bootstrap4.css",
-                      
                       "~/Assets/Xtreme/dist/css/style.min.css",
                       "~/Assets/Xtreme/libs/parsley/src/parsley.css",
                       "~/Assets/Xtreme/libs/noty/noty.css",
                       "~/Assets/Xtreme/libs/jquery-smart-wizard/dist/css/smart_wizard.min.css",
                       "~/Assets/Xtreme/libs/jquery-smart-wizard/dist/css/smart_wizard_theme_dots.min.css",
-                      "~/Assets/Xtreme/libs/leaflet/leaflet.css"
+                      "~/Assets/Xtreme/libs/leaflet/leaflet.css",
+                      "~/Assets/Xtreme/libs/spectrum/spectrum.css"
                       ).ForceOrdered());
+
+
+            /*StyleBundle styleBundle = new StyleBundle("~/Assets/Xtreme/Style");
+            styleBundle.Include("~/Assets/Xtreme/libs/fullcalendar/dist/fullcalendar.min.css", new CssRewriteUrlTransform());
+            styleBundle.Include("~/Assets/Xtreme/extra-libs/calendar/calendar.css", new CssRewriteUrlTransform());
+            styleBundle.Include("~/Assets/Xtreme/libs/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css", new CssRewriteUrlTransform());
+            styleBundle.Include("~/Assets/Xtreme/libs/select2/dist/css/select2.min.css", new CssRewriteUrlTransform());
+            styleBundle.Include("~/Assets/Xtreme/libs/datatables.net-bs4/css/dataTables.bootstrap4.css", new CssRewriteUrlTransform());
+
+            styleBundle.Include("~/Assets/Xtreme/dist/css/style.min.css", new CssRewriteUrlTransform());
+            styleBundle.Include("~/Assets/Xtreme/libs/parsley/src/parsley.css", new CssRewriteUrlTransform());
+            styleBundle.Include("~/Assets/Xtreme/libs/noty/noty.css", new CssRewriteUrlTransform());
+            styleBundle.Include("~/Assets/Xtreme/libs/jquery-smart-wizard/dist/css/smart_wizard.min.css", new CssRewriteUrlTransform());
+            styleBundle.Include("~/Assets/Xtreme/libs/jquery-smart-wizard/dist/css/smart_wizard_theme_dots.min.css", new CssRewriteUrlTransform());
+            styleBundle.Include("~/Assets/Xtreme/libs/leaflet/leaflet.css", new CssRewriteUrlTransform());
+
+            bundles.Add(styleBundle.ForceOrdered()); */
             /*************************************************************************/
             /*                          Xtreme Script Bundle                         */
             /*************************************************************************/
@@ -59,6 +76,7 @@ namespace Ryusei.JSpot.WebApp
                         "~/Assets/Xtreme/extra-libs/taskboard/js/jquery-ui.min.js",
                         "~/Assets/Xtreme/libs/popper.js/dist/umd/popper.min.js",
                         "~/Assets/Xtreme/libs/bootstrap/dist/js/bootstrap.min.js",
+                        "~/Assets/Xtreme/libs/bluebird/bluebird.min.js",
                         "~/Assets/Xtreme/libs/parsley/dist/parsley.js",
                         "~/Assets/Xtreme/libs/i18next/i18next.min.js",
                         "~/Assets/Xtreme/libs/i18next/jquery-i18next.min.js",
@@ -82,7 +100,9 @@ namespace Ryusei.JSpot.WebApp
                         "~/Assets/Xtreme/libs/select2/dist/js/select2.full.min.js",
                         "~/Assets/Xtreme/libs/select2/dist/js/select2.min.js",
                         "~/Assets/Xtreme/libs/sheetJS/xlsx.full.min.js",
-                        "~/Assets/Xtreme/extra-libs/DataTables/datatables.min.js"
+                        "~/Assets/Xtreme/extra-libs/DataTables/datatables.min.js",
+                        "~/Assets/Xtreme/libs/spectrum/datatables.min.js",
+                        "~/Assets/Xtreme/libs/spectrum/spectrum.js"
                         ).ForceOrdered());
             /*************************************************************************/
             /*                          Ryusei Style Bundle                          */

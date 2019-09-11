@@ -89,6 +89,7 @@ namespace Ryusei.JSpot.Auth.Wrap
                 User = ConfigurationManager.AppSettings["SMTP:USER"],
                 Password = ConfigurationManager.AppSettings["SMTP:PASSWORD"],
                 From = ConfigurationManager.AppSettings["SMTP:FROM"],
+                FromName = ConfigurationManager.AppSettings["SMTP:FROMNAME"],
                 SSLConnection = bool.Parse(ConfigurationManager.AppSettings["SMTP:SSL"])
             };
 

@@ -40,6 +40,10 @@ namespace Ryusei.Message.Email
         /// From
         /// </summary>
         public string From { get; set; }
+        /// <summary>
+        /// FromName
+        /// </summary>
+        public string FromName { get; set; }
         #endregion
 
         #region [Construct]

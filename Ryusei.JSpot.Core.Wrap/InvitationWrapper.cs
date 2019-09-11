@@ -185,9 +185,9 @@ namespace Ryusei.JSpot.Core.Wrap
                 // Save invitations
                 this.IInvitationMgr.Save(collectionInvitations);
                 // Sent invitations
-                if(collectionInvitations.Count > 0)
+                //if(collectionInvitations.Count > 0)
                     // Send emails
-                    this.EmailWrapper.SendMailInvitations(collectionInvitations, @event);
+                //    this.EmailWrapper.SendMailInvitations(collectionInvitations, @event);
                 // complete the scope
                 scope.Complete();
             }

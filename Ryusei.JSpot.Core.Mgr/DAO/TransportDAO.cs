@@ -78,6 +78,7 @@ namespace Ryusei.JSpot.Core.Mgr.DAO
                                 )";
             // Set default data
             transport.TransportId = Guid.NewGuid();
+            transport.DepartureDate = transport.DepartureDate.ToUniversalTime();
             transport.IsFull = false;
             transport.Active = true;
             // Execute

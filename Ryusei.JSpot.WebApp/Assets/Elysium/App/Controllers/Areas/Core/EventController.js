@@ -362,11 +362,14 @@ Elysium.App.Controllers.Areas.Core.EventController = function (arguments) {
                 SetEventGroupInformation(eventGroup);
                 // Set current event group
                 CurrentEventGroup = eventGroup;
+                // Hide Spinner
+                ISpinner.Hide(Attr.UI.EventGroupPanelDetails);
                 // Get the participants to group
                 GetParticipantsByEventGroupId(eventGroupId).then(function () {
-                    // Hide Spinner
-                    ISpinner.Hide(Attr.UI.EventGroupPanelDetails);
-                }, hide);
+                    //ISpinner.Show("#assistantgrouppanel");
+                }, function () {
+                    //ISpinner.Hide("#assistantgrouppanel");
+                    });
             },
             function (xhr) {
                 // Hide Spinner
@@ -549,7 +552,7 @@ Elysium.App.Controllers.Areas.Core.EventController = function (arguments) {
         // Show dialog
         Elysium.UI.Entities.MsgBox.DialogQuestion(
             i18next.t('Seleccionar area'),
-            i18next.t('¿Las areas seleccionadas son correctas?'),
+            i18next.t('¿Su seleccioón es correcta (ya no podra modificar esta información)?'),
             function () {
                 // Close the dialog
                 Elysium.UI.Entities.MsgBox.Close();
@@ -1124,7 +1127,7 @@ Elysium.App.Controllers.Areas.Core.EventController = function (arguments) {
                 targets: [2],
                 className: "dt-center",
                 render: function (data, type, full, meta) {
-                    return '<span class="round" style="background:' + full.Car.Color + '">&nbsp;</span>';
+                    return full.Car.Color;
                 }
             },
             {
@@ -1206,7 +1209,7 @@ Elysium.App.Controllers.Areas.Core.EventController = function (arguments) {
                 targets: [2],
                 className: "dt-center",
                 render: function (data, type, full, meta) {
-                    return '<span class="round" style="background:' + full.Car.Color + '">&nbsp;</span>';
+                    return  full.Car.Color;
                 }
             },
             {
@@ -1381,7 +1384,7 @@ Elysium.App.Controllers.Areas.Core.EventController = function (arguments) {
         IDatePickerTransport = Elysium.Implements(new Elysium.UI.Entities.DateTimePicker({
             selector: Attr.UI.TransportDepartureDate,
             options: {
-                format: 'DD-MM-YYYY h:mm:ss a',
+                format: 'DD-MM-YYYY h:mm a',
                 lang: 'es',
                 time: true
             }
@@ -1497,7 +1500,7 @@ Elysium.App.Controllers.Areas.Core.EventController = function (arguments) {
         // Get data
         var transport = IFormTransport.GetValues();
         // Departure date
-        transport.DepartureDate = moment(transport.DepartureDate, "DD-MM-YYYY h:mm:ss a").format("YYYY-MM-DDTHH:mm:ss")
+        transport.DepartureDate = moment(transport.DepartureDate, "DD-MM-YYYY h:mm a")
         // Add travel sense
         transport['TravelSense'] = TravelSense;
         // Add sextype

@@ -18,7 +18,7 @@ Elysium.App.Globals.ValidatorGlobals = function (arguments)
             .addValidator('passwordStrength', {
                 requirementType: 'string',
                 validateString: function (value, requirement) {
-                    return /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\#\%\@\!\*\(\(\)\\\|\°\¡\?¿$"&/¬'+=.-~])).{10,250}/.test(value);
+                    return true; ///((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\#\%\@\!\*\(\(\)\\\|\°\¡\?¿$"&/¬'+=.-~])).{5,250}/.test(value);
                 }
             });
     }

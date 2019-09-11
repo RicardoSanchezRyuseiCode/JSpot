@@ -58,6 +58,8 @@ namespace Ryusei.JSpot.Auth.Mgr.DAO
             // Set default data
             DateTime currentDate = DateTime.Now.ToUniversalTime();
             userData.UserId = Guid.NewGuid();
+            userData.IsValidated = true;
+            userData.Job = "";
             userData.Active = true;
             // Execute
             using (IDbConnection dbConnection = Data.DAO.GetInstance(Data.DbType.SqlServer))
